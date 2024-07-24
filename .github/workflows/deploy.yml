@@ -43,3 +43,5 @@ jobs:
           script: |
             kill -9 $(ps -ef | grep jar | head -n 1 | awk '{print $2}')
             nohup java -jar cicd-aws-0.0.1-SNAPSHOT.jar &
+
+          # 이제 된다 씨발!!!
