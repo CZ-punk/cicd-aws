@@ -41,8 +41,6 @@ jobs:
           port: 22
           script_stop: true
           script: |
-          # Copy the deploy script to the server
-           scp deploy.sh ubuntu@${{ secrets.SSH_HOST }}:~
-
-          # Execute the deploy script on the server
-           ssh ubuntu@${{ secrets.SSH_HOST }} 'bash ~/deploy.sh'
+            kill -9 $(ps -ef | grep java | head -n 1 | awk '{print $2}')
+            nohup java -jar *.jar 1> /dev/null 2>&1 &
+            mkdir checkFile
