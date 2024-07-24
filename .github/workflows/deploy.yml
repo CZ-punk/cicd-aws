@@ -32,7 +32,6 @@ jobs:
           target: "~"
           strip_components: 2
 
-
       - name: SSH Commands
         uses: appleboy/ssh-action@v0.1.6
         with:
